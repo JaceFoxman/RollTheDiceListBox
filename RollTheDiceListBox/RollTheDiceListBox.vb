@@ -3,6 +3,9 @@
 'RCET2265
 'Roll The Dice List Box
 'https://github.com/JaceFoxman/RollTheDiceListBox.git
+
+Option Explicit On
+Option Strict On
 Public Class RollTheDiceListBox
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -57,7 +60,10 @@ Public Class RollTheDiceListBox
         DataListBox.Items.Add(rowOne)
         DataListBox.Items.Add(vbNewLine
                               )
+
         DataListBox.Items.Add(rowTwo)
+        DataListBox.Items.Add(vbNewLine
+                              )
     End Sub
 
     Function RNG(min As Integer, max As Integer) As Integer
