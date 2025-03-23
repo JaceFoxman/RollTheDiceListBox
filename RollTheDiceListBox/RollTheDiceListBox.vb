@@ -39,8 +39,8 @@ Public Class RollTheDiceListBox
     'https://github.com/JaceFoxman/RollTheDice.git
     Sub RollTheDice()
         Dim randomNumber(12) As Integer
-        Dim rowOne As String
-        Dim rowTwo As String
+        Dim headerRow As String
+        Dim dataRow As String
 
         For i = 1 To 1000
             randomNumber(RNG(1, 12)) += 1
@@ -50,20 +50,18 @@ Public Class RollTheDiceListBox
         DataListBox.Items.Add(StrDup(80, "-"))
 
         For i = 2 To UBound(randomNumber)
-            rowOne &= ($"{CStr(i).PadLeft(4)}  |") '&= allows horizontal formatting
+            headerRow &= ($"{CStr(i).PadLeft(4)}  |") '&= allows horizontal formatting
         Next
 
         For i = 2 To UBound(randomNumber)
-            rowTwo &= ($"{CStr(randomNumber(i)).PadLeft(4)}  |") '&= allows horizontal formatting
+            dataRow &= ($"{CStr(randomNumber(i)).PadLeft(4)}  |") '&= allows horizontal formatting
         Next
 
-        DataListBox.Items.Add(rowOne)
-        DataListBox.Items.Add(vbNewLine
-                              )
-
-        DataListBox.Items.Add(rowTwo)
-        DataListBox.Items.Add(vbNewLine
-                              )
+        DataListBox.Items.Add(headerRow)
+        DataListBox.Items.Add(StrDup(80, "-"))
+        DataListBox.Items.Add(dataRow)
+        DataListBox.Items.Add(StrDup(80, "-"))
+        DataListBox.Items.Add(vbNewLine)
     End Sub
 
     Function RNG(min As Integer, max As Integer) As Integer
