@@ -30,6 +30,7 @@ Partial Class RollTheDiceListBox
         '
         'DataListBox
         '
+        Me.DataListBox.BackColor = System.Drawing.SystemColors.HighlightText
         Me.DataListBox.Font = New System.Drawing.Font("Consolas", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataListBox.FormattingEnabled = True
         Me.DataListBox.ItemHeight = 23
